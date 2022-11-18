@@ -1,5 +1,9 @@
 import requests, json
 from pprint import pprint
+from flask import Flask
+
+# create an instance of Flask
+app = Flask(__name__)
 
 def getTitle():
     title = input("Please enter a title for the movie and make sure to input it corrctly: ")
@@ -20,4 +24,9 @@ posterLinks = []
 for movie in data['Search']:
     # print(movie['Title'], movie['Year'])
     posterLinks.append(movie['Poster'])
-print(posterLinks)
+pprint(posterLinks)
+
+# route decorator binds a function to a URL
+@app.route('/')
+def hello():
+   return 'Hello world from Flask!'
