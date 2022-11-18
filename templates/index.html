@@ -4,7 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>MovieFinder</title>
+    {{ bootstrap.load_css()}}
   </head>
-  <body></body>
+  <body>
+    <div class="card">
+      <h5 class="card-header">Search Movie</h5>
+      <div class="card-body">
+        <h5 class="card-title">Search Movie by title</h5>
+        <input type="text" class="form-control" placeholder="Search for..." />
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button">Search</button>
+        </span>
+      </div>
+    </div>
+  </body>
 </html>
