@@ -13,7 +13,7 @@ def getTitle():
     title = input("Please enter a title for the movie and make sure to input it corrctly: ")
     return title
 
-#api call
+#api call return the posterLinks
 def callApi():
   my_key = 'bcc4d5b1'
   apiLink = ' http://www.omdbapi.com/?s=' + getTitle() + '&apikey=bcc4d5b1'
@@ -21,7 +21,7 @@ def callApi():
   try:
     r = requests.get(apiLink)
     data = r.json()
-    pprint(data)
+    # pprint(data)
   except:
     print('please try again')
 
@@ -29,9 +29,12 @@ def callApi():
   for movie in data['Search']:
       # print(movie['Title'], movie['Year'])
       posterLinks.append(movie['Poster'])
-  pprint(posterLinks)
+
+  return posterLinks
 
 # route decorator binds a function to a URL
 @app.route('/')
 def hello():
   return render_template('index.html')
+
+# pprint(callApi())
