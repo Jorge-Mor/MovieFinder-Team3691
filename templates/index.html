@@ -16,7 +16,6 @@
     </header>
 
     <main>
-      
       <!--Search container-->
       <div class="card">
         <div class="card-body">
@@ -35,40 +34,56 @@
           <div class="row align-items-start">
             <div class="col">
               <div class="card" style="width: 18rem">
-                <img src="..." class="card-img-top" alt="call the img here" />
+                <img
+                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number]['poster_path']}}"
+                  class="img-thumbnail"
+                  alt="image not found"
+                />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title">
+                    {{my_data['results'][random_number]['title']}}
+                  </h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    {{my_data['results'][random_number]['overview']}}
                   </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="#" class="btn btn-primary">More info</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+1]['poster_path']}}"
+                  class="card-img-top"
+                  alt="call the img here"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    {{my_data['results'][random_number+1]['title']}}
+                  </h5>
+                  <p class="card-text">
+                    {{my_data['results'][random_number+1]['overview']}}
+                  </p>
+                  <a href="#" class="btn btn-primary">More info</a>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" style="width: 18rem">
-                <img src="..." class="card-img-top" alt="call the img here" />
+                <img
+                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+2]['poster_path']}}"
+                  class="card-img-top"
+                  alt="call the img here"
+                />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title">
+                    {{my_data['results'][random_number+2]['title']}}
+                  </h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    {{my_data['results'][random_number+2]['overview']}}
                   </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img src="..." class="card-img-top" alt="call the img here" />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="#" class="btn btn-primary">More info</a>
                 </div>
               </div>
             </div>
@@ -78,40 +93,56 @@
           <div class="row align-items-center">
             <div class="col">
               <div class="card" style="width: 18rem">
-                <img src="..." class="card-img-top" alt="call the img here" />
+                <img
+                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+3]['poster_path']}}"
+                  class="img-thumbnail"
+                  alt="image not found"
+                />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title">
+                    {{my_data['results'][random_number+3]['title']}}
+                  </h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    {{my_data['results'][random_number+3]['overview']}}
                   </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="#" class="btn btn-primary">More info</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+4]['poster_path']}}"
+                  class="card-img-top"
+                  alt="call the img here"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    {{my_data['results'][random_number+4]['title']}}
+                  </h5>
+                  <p class="card-text">
+                    {{my_data['results'][random_number+4]['overview']}}
+                  </p>
+                  <a href="#" class="btn btn-primary">More info</a>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" style="width: 18rem">
-                <img src="..." class="card-img-top" alt="call the img here" />
+                <img
+                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+5]['poster_path']}}"
+                  class="card-img-top"
+                  alt="call the img here"
+                />
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title">
+                    {{my_data['results'][random_number+5]['title']}}
+                  </h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    {{my_data['results'][random_number+5]['overview']}}
                   </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img src="..." class="card-img-top" alt="call the img here" />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="#" class="btn btn-primary">More info</a>
                 </div>
               </div>
             </div>
