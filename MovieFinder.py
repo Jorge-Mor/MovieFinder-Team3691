@@ -8,6 +8,7 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 from datetime import datetime
 
+
 # create an instance of Flask
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'csumb-otter'
@@ -48,10 +49,12 @@ def themoviedbAPI(movie):
   my_key = '933dcbef063eeaeab80f38d6e792311c'
   apiLink = 'https://api.themoviedb.org/3/search/movie?api_key='+my_key+'&query='+movie
 
+
   try:
     r = requests.get(apiLink)
     data = r.json()
     # pprint(data)
+
   except:
     print('please try again')
   return data
@@ -99,6 +102,7 @@ def index():
 @app.route('/movie')
 def movie():
   return render_template('index2.html', movieInfo=movieInformation)
+
 
 
 # pprint(posterLinks(callApi()))
