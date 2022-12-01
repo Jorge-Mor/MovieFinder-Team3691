@@ -20,9 +20,15 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Search Movie by title</h5>
-          <input type="text" class="form-control" placeholder="Search for..." />
-          <span class="input-group-btn">
+          <!-- <input type="text" class="form-control" placeholder="Search for..." />
+          <span class="input-group-btn"> -->
             <br />
+            <form method="POST" action="">
+              {{ form.csrf_token }}
+              {{ form.song_title.label }}
+              {{ form.song_title(size=100) }}
+              <input type="submit" value="Submit">
+            </form>
             <button class="btn btn-secondary" type="button">Search</button>
           </span>
         </div>
