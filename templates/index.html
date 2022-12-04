@@ -10,139 +10,147 @@
   <body>
     <!--Header-->
     <header>
-      <div class="text-bg-info p-3">
+      <div class="bg-{{background[random_color]}} p-2">
         <h3 class="text-center">Movie Finder</h3>
       </div>
     </header>
 
     <main>
       <!--Search container-->
-      <div class="card">
-        <div class="card-body">
+      <div class="bg-{{background[random_color]}} p-2 text-dark bg-opacity-25">
+        <div class="container">
           <h5 class="card-title">Search Movie by title</h5>
-          <input type="text" class="form-control" placeholder="Search for..." />
-          <span class="input-group-btn">
-            <br />
-            <button class="btn btn-secondary" type="button">Search</button>
-          </span>
+          <br />
+          <form method="POST" action="">
+            {{ form.csrf_token }} {{ form.song_title.label }} {{
+            form.song_title(size=100) }}
+            <input
+              type="submit"
+              value="Submit"
+              class="btn btn-{{background[random_color]}}"
+            />
+          </form>
         </div>
       </div>
+      <br />
 
       <!--Movielist container-->
-      <div class="container">
-        <div class="container text-center">
-          <div class="row align-items-start">
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img
-                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number]['poster_path']}}"
-                  class="img-thumbnail"
-                  alt="image not found"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    {{my_data['results'][random_number]['title']}}
-                  </h5>
-                  <p class="card-text">
-                    {{my_data['results'][random_number]['overview']}}
-                  </p>
-                  <a href="#" class="btn btn-primary">More info</a>
+      <div>
+        <div class="container">
+          <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number]['poster_path']}}"
+                    class="img-thumbnail"
+                    alt="image not found"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      {{my_data['results'][random_number]['title']}}
+                    </h5>
+                    <p class="text-truncate">
+                      {{my_data['results'][random_number]['overview']}}
+                    </p>
+                    <a href="#" class="btn btn-primary">More info</a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img
-                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+1]['poster_path']}}"
-                  class="card-img-top"
-                  alt="call the img here"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    {{my_data['results'][random_number+1]['title']}}
-                  </h5>
-                  <p class="card-text">
-                    {{my_data['results'][random_number+1]['overview']}}
-                  </p>
-                  <a href="#" class="btn btn-primary">More info</a>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+1]['poster_path']}}"
+                    class="card-img-top"
+                    alt="call the img here"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      {{my_data['results'][random_number+1]['title']}}
+                    </h5>
+                    <p class="text-truncate">
+                      {{my_data['results'][random_number+1]['overview']}}
+                    </p>
+                    <a href="#" class="btn btn-primary">More info</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+2]['poster_path']}}"
+                    class="card-img-top"
+                    alt="call the img here"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      {{my_data['results'][random_number+2]['title']}}
+                    </h5>
+                    <p class="text-truncate">
+                      {{my_data['results'][random_number+2]['overview']}}
+                    </p>
+                    <a href="#" class="btn btn-primary">More info</a>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img
-                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+2]['poster_path']}}"
-                  class="card-img-top"
-                  alt="call the img here"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    {{my_data['results'][random_number+2]['title']}}
-                  </h5>
-                  <p class="card-text">
-                    {{my_data['results'][random_number+2]['overview']}}
-                  </p>
-                  <a href="#" class="btn btn-primary">More info</a>
+            <br />
+            <!--Second coloum start here-->
+            <div class="row align-items-center">
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+3]['poster_path']}}"
+                    class="img-thumbnail"
+                    alt="image not found"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      {{my_data['results'][random_number+3]['title']}}
+                    </h5>
+                    <p class="text-truncate">
+                      {{my_data['results'][random_number+3]['overview']}}
+                    </p>
+                    <a href="#" class="btn btn-primary">More info</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <br />
-          <!--Second coloum start here-->
-          <div class="row align-items-center">
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img
-                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+3]['poster_path']}}"
-                  class="img-thumbnail"
-                  alt="image not found"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    {{my_data['results'][random_number+3]['title']}}
-                  </h5>
-                  <p class="card-text">
-                    {{my_data['results'][random_number+3]['overview']}}
-                  </p>
-                  <a href="#" class="btn btn-primary">More info</a>
-                </div>
-              </div>
-            </div>
 
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img
-                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+4]['poster_path']}}"
-                  class="card-img-top"
-                  alt="call the img here"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    {{my_data['results'][random_number+4]['title']}}
-                  </h5>
-                  <p class="card-text">
-                    {{my_data['results'][random_number+4]['overview']}}
-                  </p>
-                  <a href="#" class="btn btn-primary">More info</a>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+4]['poster_path']}}"
+                    class="card-img-top"
+                    alt="call the img here"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      {{my_data['results'][random_number+4]['title']}}
+                    </h5>
+                    <p class="text-truncate">
+                      {{my_data['results'][random_number+4]['overview']}}
+                    </p>
+                    <a href="#" class="btn btn-primary">More info</a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card" style="width: 18rem">
-                <img
-                  src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+5]['poster_path']}}"
-                  class="card-img-top"
-                  alt="call the img here"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    {{my_data['results'][random_number+5]['title']}}
-                  </h5>
-                  <p class="card-text">
-                    {{my_data['results'][random_number+5]['overview']}}
-                  </p>
-                  <a href="#" class="btn btn-primary">More info</a>
+              <div class="col">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="{{'https://image.tmdb.org/t/p/w500'+my_data['results'][random_number+5]['poster_path']}}"
+                    class="card-img-top"
+                    alt="call the img here"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      {{my_data['results'][random_number+5]['title']}}
+                    </h5>
+                    <p class="text-truncate">
+                      {{my_data['results'][random_number+5]['overview']}}
+                    </p>
+                    <a href="#" class="btn btn-primary">More info</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -151,9 +159,11 @@
       </div>
     </main>
   </body>
-  <hr />
+
+  <br />
+
   <!--Bottom of page-->
-  <footer>
+  <footer class="bg-{{background[random_color]}} p-3 text-dark bg-opacity-25">
     <div class="container">
       <div class="container text-center">
         <div class="row align-items-start">
