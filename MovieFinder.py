@@ -16,9 +16,18 @@ app.config['SECRET_KEY'] = 'csumb-otter'
 #Create Bootstrap object (after Flask object):
 bootstrap = Bootstrap5(app)
 
-def getTitle():
-    title = input("Please enter a title for the movie and make sure to input it corrctly: ")
-    return title
+#class for playlist
+class Playlist(FlaskForm):
+  song_title = StringField(
+    'Movie Title', 
+    validators=[DataRequired()]
+  )
+
+#geting Api call
+def themoviedbAPI(movie):
+  my_key = '933dcbef063eeaeab80f38d6e792311c'
+  apiLink = 'https://api.themoviedb.org/3/search/movie?api_key='+my_key+'&query='+movie
+
 
 #api call return the posterLinks
 def callApi():
@@ -26,15 +35,41 @@ def callApi():
   my_key = 'bcc4d5b1'
   apiLink = ' http://www.omdbapi.com/?s=' + getTitle() + '&apikey=bcc4d5b1'
 
+
   try:
     r = requests.get(apiLink)
     data = r.json()
     # pprint(data)
+
   except:
     print('please try again')
   return data
 
+#Assigning movie names to background to get random colors and image on the home screen
+movieNames = ['avenger', 'thing', 'black', 'wave', 'it', 'teen', 'john', 'the', 'him', 'one', 'hero']
+background =['secondary', 'success','warning','info','primary','danger']
+movieInformation = []
 
+
+def store_song(movie):
+  movieI = themoviedbAPI(movie)
+  movieInformation.append(movieI)
+
+#home page
+@app.route('/', methods=('GET', 'POST'))
+def index():
+  #Collecting info from the home page and rendering to a new page if the search button is clicked
+  form = Playlist()
+  if form.validate_on_submit():
+    movieInformation = []
+    store_song(form.song_title.data)
+    return redirect('/movie')
+
+  data=themoviedbAPI(random.choice(movieNames))
+  random_number = random.randint(0, 6)
+  random_color = random.randint(0, 5)
+  return render_template('index.html', form=form, my_data=data,random_number=random_number,background=background,random_color=random_color)
+=======
 def posterLinks(data):
   posterLinks = []
   for movie in data['Search']:
@@ -105,4 +140,8 @@ def movie():
 
 
 
-# pprint(posterLinks(callApi()))
+
+#movie page
+@app.route('/movie')
+def movie():
+  return render_template('index2.html', movieInfo=movieInformation)
