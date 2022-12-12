@@ -11,23 +11,39 @@
     {% endblock %}
   </head>
 <body>
+  <header>
+      <div class="text-bg-info p-3">
+        <h3 class="text-center">Movie Finder</h3>
+      </div>
+  </header>
   {% block content %}
     <div class="container mb-4">  
       <div class="card mt-4">
         <div class="card-body">
           <h2 class="card-title">Movie Findings</h2>
-          <ul class="list-group">
-              <li class="list-group-item">{{movieInfo[-1]['results'][0]['overview']}}</li>
-          </ul>
+		  <div class="container">
+			<div class="row">
+			  <div class="col-sm">
+			    <img
+			    src="{{'https://image.tmdb.org/t/p/w500'+movieInfo[-1]['results'][0]['poster_path']}}"
+			    class="img-thumbnail"
+			    alt="image not found" width="400" height = "350" 
+				/>
+			  </div>
+			  <div class="col-sm">
+                <ul class="list-group">
+			      <p class="list-group-item"> Title: {{movieInfo[-1]['results'][0]['original_title']}} <br/> 
+			      Original language: {{movieInfo[-1]['results'][0]['original_language']}} <br/>
+			      Overview: {{movieInfo[-1]['results'][0]['overview']}} <br/>
+			      Popularity: {{movieInfo[-1]['results'][0]['popularity']}} <br/> 
+			      Release Date: {{movieInfo[-1]['results'][0]['release_date']}} <br/>
+			      Vote Average: {{movieInfo[-1]['results'][0]['vote_average']}}</p>
+                </ul>
+			  </div>
         </div>
         <div class="card-footer">
           <a href="{{ url_for('index') }}" class="card-link">Take me home</a>
         </div>
-          <img
-          src="{{'https://image.tmdb.org/t/p/w500'+movieInfo[-1]['results'][0]['poster_path']}}"
-          class="img-thumbnail"
-          alt="image not found" width="750" 
-        />
       </div>
     </div>
   {% endblock %}
