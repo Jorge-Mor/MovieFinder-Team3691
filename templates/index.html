@@ -1,3 +1,4 @@
+<!-- worked by Anitha Rajamohan and Jorge Mereno -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,6 +18,7 @@
 
     <main>
       <!--Search container-->
+      <!-- worked by Jorge Mereno activating search button -->
       <div class="bg-{{background[random_color]}} p-2 text-dark bg-opacity-25">
         <div class="container">
           <h5 class="card-title">Search Movie by title</h5>
@@ -34,6 +36,7 @@
       </div>
       <br />
 
+      <!-- # worked by Anitha Api call and design-->
       <!--Movielist container-->
       <div>
         <div class="container">
@@ -53,7 +56,11 @@
                     <p class="text-truncate">
                       {{my_data['results'][random_number]['overview']}}
                     </p>
-                    <a href="#" class="btn btn-primary">More info</a>
+                    <a
+                      href="{{url_for('movieTitle',title=my_data['results'][random_number]['title'])}}"
+                      class="btn btn-{{background[random_color]}}"
+                      >More info</a
+                    >
                   </div>
                 </div>
               </div>
@@ -72,7 +79,11 @@
                     <p class="text-truncate">
                       {{my_data['results'][random_number+1]['overview']}}
                     </p>
-                    <a href="#" class="btn btn-primary">More info</a>
+                    <a
+                      href="{{url_for('movieTitle',title=my_data['results'][random_number+1]['title'])}}"
+                      class="btn btn-{{background[random_color]}}"
+                      >More info</a
+                    >
                   </div>
                 </div>
               </div>
@@ -90,7 +101,11 @@
                     <p class="text-truncate">
                       {{my_data['results'][random_number+2]['overview']}}
                     </p>
-                    <a href="#" class="btn btn-primary">More info</a>
+                    <a
+                      href="{{url_for('movieTitle',title=my_data['results'][random_number+2]['title'])}}"
+                      class="btn btn-{{background[random_color]}}"
+                      >More info</a
+                    >
                   </div>
                 </div>
               </div>
@@ -112,7 +127,11 @@
                     <p class="text-truncate">
                       {{my_data['results'][random_number+3]['overview']}}
                     </p>
-                    <a href="#" class="btn btn-primary">More info</a>
+                    <a
+                      href="{{url_for('movieTitle',title=my_data['results'][random_number+3]['title'])}}"
+                      class="btn btn-{{background[random_color]}}"
+                      >More info</a
+                    >
                   </div>
                 </div>
               </div>
@@ -131,7 +150,11 @@
                     <p class="text-truncate">
                       {{my_data['results'][random_number+4]['overview']}}
                     </p>
-                    <a href="#" class="btn btn-primary">More info</a>
+                    <a
+                      href="{{url_for('movieTitle',title=my_data['results'][random_number+4]['title'])}}"
+                      class="btn btn-{{background[random_color]}}"
+                      >More info</a
+                    >
                   </div>
                 </div>
               </div>
@@ -149,7 +172,11 @@
                     <p class="text-truncate">
                       {{my_data['results'][random_number+5]['overview']}}
                     </p>
-                    <a href="#" class="btn btn-primary">More info</a>
+                    <a
+                      href="{{url_for('movieTitle',title=my_data['results'][random_number+5]['title'])}}"
+                      class="btn btn-{{background[random_color]}}"
+                      >More info</a
+                    >
                   </div>
                 </div>
               </div>
