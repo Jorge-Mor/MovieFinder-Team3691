@@ -14,7 +14,7 @@ This is a project cerated by TEAM 3691; also known as Jorge Moreno, Anitha Rajam
   - Run website by putting ' flask --app MovieFinder.py --debug run ' in termnal and open the port link
   - Website should be running at this point, Have Fun
   
-Github Repo Link: https://github.com/Jorge-Mor/MovieFinder.git 
+Github Repo Link: https://github.com/Jorge-Mor/MovieFinder-Team3691.git
 
 ## Future Work:
   - In terms of the future of this project we want to be able to display more information about the movies we are displaying. 
