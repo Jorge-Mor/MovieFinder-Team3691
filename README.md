@@ -15,6 +15,7 @@ This is a project cerated by TEAM 3691; also known as Jorge Moreno, Anitha Rajam
   - Website should be running at this point, Have Fun
   
 Github Repo Link: https://github.com/Jorge-Mor/MovieFinder-Team3691.git
+Trello Link: https://trello.com/invite/b/alj7u3pJ/ATTI0663827b520959a4976b0e419c4e7575CDBD4DAC/cst-205-project-team-3691 
 
 ## Future Work:
   - In terms of the future of this project we want to be able to display more information about the movies we are displaying. 
